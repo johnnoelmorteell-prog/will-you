@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(180deg,#ffd6e7,#fff0f5);
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+}
+
+/* floating flowers */
+.flower{
+    position:absolute;
+    font-size:28px;
+    animation: float 10s linear infinite;
+    opacity:0.8;
+}
+
+@keyframes float{
+    from{ transform:translateY(110vh); }
+    to{ transform:translateY(-10vh); }
+}
+
+.card{
+    background:white;
+    padding:40px 50px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    z-index:10;
+}
+
+h1{
+    color:#d6336c;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+button{
+    padding:12px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+#yesBtn{
+    background:#ff5c8a;
+    color:white;
+}
+
+#noBtn{
+    background:#cccccc;
+    position:absolute;
+}
+
+.angel{
+    font-size:40px;
+    margin-bottom:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+    <div class="angel">😇</div>
+    <h1>Angel Lyka L. Opulencia</h1>
+    <p>Will you be my Valentine? 💖</p>
+
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const card  = document.getElementById("card");
+
+/* move NO button like the sample site */
+noBtn.addEventListener("mouseover", moveButton);
+
+function moveButton(){
+    const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+    noBtn.style.left = x + "px";
+    noBtn.style.top  = y + "px";
+}
+
+/* YES message */
+yesBtn.onclick = function(){
+    card.innerHTML = `
+        <div class="angel">💐😇</div>
+        <h1>Thank you for saying YES!</h1>
+        <p>You just made my Valentine very special 💖</p>
+    `;
+};
+
+/* create floating flowers */
+const flowers = ["🌸","🌹","🌷","🌺","💐"];
+
+for(let i=0;i<20;i++){
+    const f = document.createElement("div");
+    f.className = "flower";
+    f.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+    f.style.left = Math.random()*100 + "vw";
+    f.style.animationDuration = (6 + Math.random()*6) + "s";
+    f.style.fontSize = (20 + Math.random()*20) + "px";
+    document.body.appendChild(f);
+}
+</script>
+
+</body>
+</html>
