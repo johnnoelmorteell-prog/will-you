@@ -6,6 +6,11 @@
 
 <style>
 body{
+
+<audio id="bgm" src="tenerife.mp3" loop></audio>
+
+<div class="card" id="card">
+
     margin:0;
     height:100vh;
     display:flex;
@@ -87,7 +92,7 @@ button{
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const card  = document.getElementById("card");
-
+const bgm   = document.getElementById("bgm");
 /* move NO button like the sample site */
 noBtn.addEventListener("mouseover", moveButton);
 
@@ -120,6 +125,13 @@ for(let i=0;i<20;i++){
     document.body.appendChild(f);
 }
 </script>
+document.body.addEventListener("click", () => {
+    bgm.play();
+},{ once:true });
 
 </body>
+    <audio id="bgm" src="tenerife.mp3" loop></audio>
+
+<div class="card" id="card">
+    
 </html>
