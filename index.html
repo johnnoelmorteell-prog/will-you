@@ -6,11 +6,6 @@
 
 <style>
 body{
-
-<audio id="bgm" src="tenerife.mp3" loop></audio>
-
-<div class="card" id="card">
-
     margin:0;
     height:100vh;
     display:flex;
@@ -82,10 +77,10 @@ button{
 <div class="card" id="card">
     <div class="angel">😇</div>
     <h1>Angel Lyka L. Opulencia</h1>
-    <p>Will you be my Valentine? 💖</p>
+    <p>Will you be my Valentine?🥺💖</p>
 
     <button id="yesBtn">Yes</button>
-    <button id="noBtn">No</button>
+    <button id="noBtn">Im sorry but no</button>
 </div>
 
 <script>
@@ -107,13 +102,13 @@ function moveButton(){
 yesBtn.onclick = function(){
     card.innerHTML = `
         <div class="angel">💐😇</div>
-        <h1>Thank you for saying YES!</h1>
-        <p>You just made my Valentine very special 💖</p>
+        <h1>GOOD ANSWER🥰🥰!</h1>
+        <p>Y SEE YOUU THENNN MWAHHH YOU MADE THIS MAN VERY HAPPY 💖</p>
     `;
 };
 
 /* create floating flowers */
-const flowers = ["🌸","🌹","🌷","🌺","💐"];
+const flowers = ["🌸","🌹","🌷","🌺","💐","🌹","🌸","🌹","🌷","🌺","💐","🌹"];
 
 for(let i=0;i<20;i++){
     const f = document.createElement("div");
@@ -125,13 +120,5 @@ for(let i=0;i<20;i++){
     document.body.appendChild(f);
 }
 </script>
-document.body.addEventListener("click", () => {
-    bgm.play();
-},{ once:true });
-
 </body>
-    <audio id="bgm" src="tenerife.mp3" loop></audio>
-
-<div class="card" id="card">
-    
 </html>
